@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
 
+    <script>
+      let nombres = [
+        "Jorge",
+        "Isabel",
+        "Juan",
+        "Pedro",
+        "Karina",
+        "Jose",
+        "Arturo",
+        "Rogelio",
+        "Bertha",
+      ];
 
-
-<script>
-
-let nombres  = ['Jorge','Isabel','Juan','Pedro','Karina','Jose','Arturo','Rogelio','Bertha'];
-
-
-/*
+      /*
 
 Funciones 1 -  Crea una funcion llamada "mayusculas" que:
 - recibe como argumento el arreglo "nombres" y escribe en consola (console.log) cada nombre en mayuscula. 
 - el arreglo original no se modifica.
 */
 
-// CREA TU FUNCION MAYUSCULAS aqui:
+      // CREA TU FUNCION MAYUSCULAS aqui:
 
+      const mayusculas = (nombres) => {
+        for (let name of nombres) {
+          console.log(name.toUpperCase());
+        }
+      };
 
-
-
-/*
+      /*
 Funciones 2 -  Crea una funcion llamada "calculateDogAge" que: 
 
 - reciba como argumento un número representando la edad del perro.
@@ -33,13 +42,13 @@ Funciones 2 -  Crea una funcion llamada "calculateDogAge" que:
 
 */
 
-// CREA TU FUNCION calculateDogAge aqui:
+      // CREA TU FUNCION calculateDogAge aqui:
+      const calculateDogAge = (humanAge) => {
+        console.log(`Tu perro tiene ${7 * humanAge} años perro`);
+      };
+      /*
 
-
-
-
-
-/*
+    
 
 ### Funciones 3 - Crea 2 funciones. Una llamada celsiusToFahrenheit que:
 
@@ -60,17 +69,20 @@ fahrenheitToCelsius(95) --> 35
 
 */
 
+      // CREA TUS FUNCIONES  aqui:
 
+      const celsiusToFahrenheit = (celcius) => {
+        const formula = (celcius * 9) / 5 + 32;
+        console.log(formula);
+      };
 
+      const fahrenheitToCelsius = (farenheit) => {
+        const formula = ((farenheit - 32) * 5) / 9;
+        console.log(formula);
+      };
 
-// CREA TUS FUNCIONES  aqui:
+      /*  OBJETOS 
 
-
-
-
-
-
-/*  OBJETOS 
 
 A) Define un constructor para crear objetos tipo "Perro" que reciba 3 parametros
 
@@ -87,39 +99,37 @@ C) Con un console.log escribe el nombre del primer objeto, el color del segundo,
 
 */
 
+      class Dog {
+        constructor(name, color, breed) {
+          this.name = name;
+          this.color = color;
+          this.breed = breed;
+        }
+      }
 
+      const dog1 = new Dog("scrappy", "brown", "beagle");
+      const dog2 = new Dog("cruella", "white", "dalmatian");
+      const dog3 = new Dog("skippy", "orange", "chihuahua");
 
-/***
- * 
- *        PRUEBA TUS FUNCIONES
- * 
- ***/
+      /***
+       *
+       *        PRUEBA TUS FUNCIONES
+       *
+       ***/
 
+      mayusculas(nombres);
+      calculateDogAge(4);
+      celsiusToFahrenheit(35);
+      fahrenheitToCelsius(95);
 
-mayusculas(nombres);
-calculateDogAge(4);
-celsiusToFahrenheit(35)
-fahrenheitToCelsius(95)
+      /***
+       *
+       *        PRUEBA TUS OBJETOS AQUI
+       *
+       ***/
+      console.log(`${dog1.name}, ${dog2.color}, ${dog3.breed}`);
+    </script>
+  </head>
 
-
-
-
-
-/***
- * 
- *        PRUEBA TUS OBJETOS AQUI
- * 
- ***/
-
-
-</script>
-
-</head>
-
-<body>
-
-
-
-</body>
-
+  <body></body>
 </html>
